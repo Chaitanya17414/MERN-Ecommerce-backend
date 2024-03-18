@@ -4,6 +4,7 @@ const app = express();
 
 app.use(cors())
 app.use(express.json())
+require("dotenv").config()
 
 require("dotenv").config()
 var dbConnection = require('./db')
@@ -26,6 +27,8 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     next();
 });
+
+PORT =process.env.SERVER_PORT || 8080
 
 
 app.listen(8080,()=>console.log("Node server started"));

@@ -1,8 +1,8 @@
 
 const mongoose = require("mongoose");
+require("dotenv").config()
 
-var mongoDBURL = "mongodb+srv://chaitanya:chaitanya@cluster0.1v9qlix.mongodb.net/mern-ecommerce";
-
+var mongoDBURL = process.env.DB_URI;
 mongoose.connect(mongoDBURL, {useUnifiedTopology: true, useNewUrlParser: true})
 
 var dbConnect= mongoose.connection
