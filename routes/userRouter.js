@@ -110,8 +110,9 @@ router.post("/update", async (req, res) => {
     }  else {
             const result = await User.findByIdAndDelete(userId);
             if (result) {
-                const remainingUsers = await User.find({});
-                res.send({ users: remainingUsers, });
+                const users = await User.find({});
+                users.save()
+                res.send("user deleteted successfully");
             } else {
                 res.status(404).send("User not found");
             }

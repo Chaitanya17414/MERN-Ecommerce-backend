@@ -28,7 +28,7 @@ app.use((req, res, next) => {
     next();
 });
 
-PORT =process.env.SERVER_PORT || 8080
+const PORT =process.env.SERVER_PORT || 8080
 
 
-app.listen(8080,()=>console.log("Node server started"));
+app.listen(PORT,()=>console.log("Node server started"));
